@@ -1,0 +1,99 @@
+<router-outlet></router-outlet>
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#FFB6B9;">
+  <div class="container">
+    <a class="navbar-brand" href="/" style="font-family: 'Pacifico', cursive; font-size: 2rem; color: #2D4A4F;"><b>BiblioCakes</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/home" style="font-weight: bold; color: #2D4A4F;">Accueil</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle pointer" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="font-weight: bold; color: #2D4A4F;">Nos choix</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/sucres">Nos Sucrés</a></li>
+            <li><a class="dropdown-item" routerLink="/sales">Nos Salés</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button *ngIf="login" class="btn btn-danger" (click)="dconnecter()">Déconnecter</button>
+          <button *ngIf="!login" class="btn btn-info" routerLink="/admin">Login</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="hero-section">
+  <div class="hero-content text-center">
+    <h1 class="display-4">Bienvenue chez BiblioCakes</h1>
+    <p class="lead">Dégustez nos délices sucrés et salés faits maison</p>
+    <a href="/sucres" class="btn btn-lg btn-primary mt-4">Découvrir Nos Sucrés</a>
+    <a href="/sales" class="btn btn-lg btn-teal mt-4">Découvrir Nos Salés</a>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row text-center" *ngIf="login">
+    <div class="col-md-4">
+      <div class="card" style="border-radius: 15px; overflow: hidden;">
+        <img src="/assets/263666435_297171945749119_7400940882730229912_n.jpg" class="card-img-top" alt="Sucrés">
+        <div class="card-body">
+          <h5 class="card-title ">Nos Sucrés</h5>
+          <p class="card-text">Des créations sucrées pour tous les goûts. Fraîches et savoureuses.</p>
+          <a href="/sucres" class="btn btn-outline-dark">Voir plus</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="border-radius: 15px; overflow: hidden;">
+        <img src="/assets/13.jpg" class="card-img-top" alt="Salés">
+        <div class="card-body">
+          <h5 class="card-title">Nos Salés</h5>
+          <p class="card-text">Savourez nos spécialités salées. Parfait pour chaque occasion.</p>
+          <a href="/sales" class="btn btn-outline-dark">Voir plus</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"  >
+      <div class="card" style="border-radius: 15px; overflow: hidden;">
+        <img src="/assets/imagesp.jpg" class="card-img-top" alt="Panier">
+        <div class="card-body">
+          <h5 class="card-title">Panier</h5>
+          <p class="card-text">Votre panier d'achats personnalisé, toujours prêt à recevoir vos envies.</p>
+          <a href="/panier" class="btn btn-outline-dark">Voir mon Panier ({{sum}})</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center" *ngIf="!login">
+    <div class="col-md-6">
+      <div class="card" style="border-radius: 15px; overflow: hidden;">
+        <img src="/assets/262720224_442252374189741_5292062185404596263_n.jpg" class="card-img-top" alt="Sucrés">
+        <div class="card-body">
+          <h5 class="card-title">Nos Sucrés</h5>
+          <p class="card-text">Des créations sucrées pour tous les goûts. Fraîches et savoureuses.</p>
+          <a href="/sucres" class="btn btn-outline-dark">Voir plus</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card" style="border-radius: 15px; overflow: hidden;">
+        <img src="/assets/13.jpg" class="card-img-top" alt="Salés">
+        <div class="card-body">
+          <h5 class="card-title">Nos Salés</h5>
+          <p class="card-text">Savourez nos spécialités salées. Parfait pour chaque occasion.</p>
+          <a href="/sales" class="btn btn-outline-dark">Voir plus</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="text-center py-4" style="background-color: #FFB6B9; color: white;">
+  <p>&copy; 2024 BiblioCakes - Tous droits réservés</p>
+</footer>

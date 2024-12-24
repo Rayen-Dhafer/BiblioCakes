@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#FFB6B9;" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-family: Georgia, serif; font-size: 1.5rem; color: #2D4A4F;"><b>BiblioCakes</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-default" routerLink="/home"><b>Accueil</b></button>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="dropdown04" data-bs-toggle="dropdown" class="btn btn-outline-default" aria-expanded="false"><b>Nos choix</b></a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown04">
+            <li><a class="dropdown-item" routerLink="/sucres"><b>Nos Sucrés</b></a></li>
+            <li><a class="dropdown-item" routerLink="/sales"><b>Nos Salés</b></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+<div class="container mb-5 mt-5">
+  <h1 class="text-center" style="font-family: Georgia, serif; font-size: 44px; color: #fde5e3;">Votre Panier ({{serv.sum}})</h1>
+  <br><br>
+
+  <div class="row">
+    <p><strong>Total: {{total}} DT</strong></p>
+    <div *ngFor="let t of tabPanier" class="col-md-12 mb-4">
+      <div class="card" style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
+        <div class="row g-0">
+          <div class="col-md-3">
+            <img [src]="t.img" class="card-img-top" alt="{{t.name}}" style="width: 100%; height: auto; object-fit: cover;">
+          </div>
+          <div class="col-md-9">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: Georgia, serif; font-size: 25px; color: #FF6F61;"><b>{{t.name}}</b></h5>
+              <p class="card-text" style="font-family: Georgia, serif; font-size: 18px; color: #555;">{{t.description}}</p>
+              <p class="card-text" style="font-family: Georgia, serif; font-size: 18px; color: #FF6F61;"><b>{{t.prix}} DT</b></p>
+
+              <br><br><br>
+              <button class="btn btn-danger w-50" (click)="suppPanier(t)">Supprimer de panier</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

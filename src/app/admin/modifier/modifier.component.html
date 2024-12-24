@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#FFB6B9;" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-family: Georgia, serif; font-size: 24px; color: #2D4A4F;"><b>Modifier Un Choix</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-default"><b></b></button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-dark" style="margin-left: auto;" routerLink="/admin/lister-cake"><b>Lister</b></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br><br><br><br><br><br><br>
+
+<form (ngSubmit)="soumettre(C.value['id'],C.value['name'],C.value['description'],C.value['prix'])" #C="ngForm">
+  <div class="mod">
+    <label style="font-family: Georgia, serif">Nom du choix</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="nom" ngModel required><br>
+    <div [hidden]="nom" class="alert alert-danger">Nom du choix est obligatoire</div>
+
+    <label style="font-family: Georgia, serif">Description</label>
+    <input type="text" class="form-control" id="description" name="description" [(ngModel)]="desc" ngModel required><br>
+
+    <label style="font-family: Georgia, serif">Prix</label>
+    <input type="number" class="form-control" id="prix" name="prix" [(ngModel)]="prix" ngModel required><br>
+
+    <button type="submit" class="btnInfo" [disabled]="C.invalid">Modifier</button>
+  </div>
+</form>

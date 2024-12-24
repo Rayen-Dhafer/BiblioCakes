@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#FFB6B9;" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-family: Georgia, serif; font-size: 24px; color: #2D4A4F;"><b>Ajouter Un Choix</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-default"><b></b></button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-dark" style="margin-left: auto;" (click)="gotoadmin()"><b>Menu Admin</b></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br><br><br><br><br><br>
+<div class="contenu">
+  <div class="aj">
+    <label style="font-family: Georgia, serif">Nom Choix</label> 
+    <input #name class="form-control" required><br>
+
+    <label style="font-family: Georgia, serif">Nature du Choix</label> 
+    <input #choix class="form-control" placeholder="sucre/sale" required><br>
+
+    <label style="font-family: Georgia, serif">Description</label> 
+    <input #description class="form-control" required><br>
+
+    <label style="font-family: Georgia, serif">Image</label> 
+    <input #image class="form-control" required><br>
+
+    <label style="font-family: Georgia, serif">Prix</label> 
+    <input #prix type="number" class="form-control" required><br>
+
+    <button type="submit" class="btnInfo" (click)="ajouterCake(name.value, description.value, choix.value, image.value, prix.value)">Ajouter</button>
+  </div>
+</div>

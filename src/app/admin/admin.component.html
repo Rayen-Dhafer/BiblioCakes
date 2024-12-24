@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#FFB6B9;" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-family: Georgia, serif; color: #2D4A4F;"><b>ADMIN</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a><button type="button" class="btn btn-outline-dark"><b>Admin</b></button></a>
+        </li>
+        <li class="nav-item">
+          <button (click)="dconnecter()" type="button" class="btn btn-outline-dark" style="position: absolute; left: 90%;"><b>Deconnecter</b></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div style="text-align:center">
+    <legend style="font-family: Georgia, serif; margin-top: 50px; font-size: 28px; color: #2D4A4F;">Menu</legend><br><br>
+    <div class="row">
+      <div class="col-md-6">
+        <a routerLink="ajouter-cake">
+          <button type="submit" class="btn btn-info w-100" style="font-family: Georgia, serif; font-size: 18px;">
+            Ajouter un choix
+          </button>
+        </a>
+      </div>
+
+      <div class="col-md-6">
+        <a routerLink="lister-cake">
+          <button type="submit" class="btn btn-info w-100" style="font-family: Georgia, serif; font-size: 18px;">
+            Supprimer un choix
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#FFB6B9;" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-family: Georgia, serif; font-size: 1.5rem; color: #2D4A4F;"><b>BiblioCakes</b></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button type="button" class="btn btn-outline-dark" (click)="gotohome()"><b>Accueil</b></button>
+        </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="dropdown04" data-bs-toggle="dropdown" class="btn btn-outline-dark" aria-expanded="false"><b>Nos choix</b></a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown04">
+            <li><a class="dropdown-item" routerLink="/sucres"><b>Nos Sucrés</b></a></li>
+            <li><a class="dropdown-item" routerLink="/sales"><b>Nos Salés</b></a></li>
+          </ul>
+        </li>
+     
+        <li class="nav-item" *ngIf="login">
+          <button  type="button" class="btn btn-outline-dark" routerLink="/panier"><b>Panier {{cakeservice.sum}}</b></button>
+        </li>
+        
+
+        
+ 
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+<div class="container">
+  <br>
+  <h1 class="text-center" style="font-family: Georgia, serif; font-size: 44px; color: #fde5e3;">Nos Salés</h1><br><br>
+  
+  <div class="row">
+    <div *ngFor="let f of tabCake; let i = index" class="col-md-4 mb-4">
+      <div *ngIf="f.choix === 'sale'" class="card" style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden;">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img [src]="f.img" class="card-img-top" alt="{{f.name}}" style="width:100%; height: auto; object-fit: cover;">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title" style="font-family: Georgia, serif; font-size: 25px; color: #2D4A4F;"><b>{{f.name}}</b></h5>
+              <p class="card-text" style="font-family: Georgia, serif; font-size: 18px; color: #555;">{{f.description}}</p>
+              <p class="card-text" style="font-family: Georgia, serif; font-size: 18px; color: #FF6F61;"><b>Prix d'un Kilo : {{f.prix}} dt</b></p>
+              <button *ngIf="login" class="btn btn-info w-100" (click)="ajoutPanier(f)">Ajouter au panier</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

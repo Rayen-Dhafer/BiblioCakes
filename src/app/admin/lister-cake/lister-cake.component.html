@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:#FFB6B9;" aria-label="Fourth navbar example">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="font-family: Georgia, serif; font-size: 24px; color: #2D4A4F;">
+      <b>Liste Des Choix </b>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExample04">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item ms-auto">
+          <button type="button" class="btn btn-outline-dark" (click)="gotoadmin()"><b>Menu Admin</b></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+<br><br>
+<div class="container">
+  <p style="text-align:center; font-family: Georgia, serif; font-size: 30px; color: #faecea;" >Les Sucrés</p><br>
+  
+  <div class="row">
+    <div *ngFor="let i of tabCake; index as k"   class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: Georgia, serif;">{{i.name}}</h5>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-danger" (click)="delete(k)">Supprimer</button>
+            <button class="btn btn-info" [routerLink]="['/admin/modifier', i.id]">Modifier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <p style="text-align:center; font-family: Georgia, serif; font-size: 30px;color: #faecea;">Les Salés</p><br>
+
+  <div class="row">
+    <div *ngFor="let i of tabCake; index as k"   class="col-md-4 mb-4">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title" style="font-family: Georgia, serif;">{{i.name}}</h5>
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-danger" (click)="delete(k)">Supprimer</button>
+            <button class="btn btn-info" [routerLink]="['/admin/modifier', i.id]">Modifier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
